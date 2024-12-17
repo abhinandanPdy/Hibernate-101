@@ -1,0 +1,32 @@
+<?xml version = "1.0" encoding = "utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name ="org.abhinandanpdy.entity.Question" table="questions">
+
+        <id name="id" column="ID" type="int">
+            <generator class="identity"/>
+        </id>
+
+        <property name="qname" column="QNAME" type="string"/>
+
+        <list name="options" table="question_options" cascade="all">
+            <!-- This table will store the options associated with each question -->
+            <key column="ID"/> <!-- Foreign key referencing the "Questions" table. -->
+            <index column="OPTION_INDEX"/> <!-- An integer column to store the index of the OPTION in the list. -->
+            <element column="OPTION_VALUE" type="string"/> <!-- A string column to store the Options name. -->
+        </list>
+
+        <!--
+        <set name="options">
+            <key column="ID" />
+            <element column="OPTION"/>
+        </set>
+        -->
+
+        <property name="answer" column="ANSWER" type="string"/>
+
+    </class>
+</hibernate-mapping>
