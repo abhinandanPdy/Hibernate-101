@@ -20,7 +20,7 @@
 
         <property name="empName" column="name" type="string"/>
         <property name="empDesignation" column="designation" type="string"/>
-        <property name="empSalary" column="salary" type="double"/>
+        <property name="empSalary" column="salary" type="double" precision="7" scale="2"/>
 
     </class>
 </hibernate-mapping>
