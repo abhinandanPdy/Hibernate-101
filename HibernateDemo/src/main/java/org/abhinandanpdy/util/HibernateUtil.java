@@ -30,7 +30,15 @@ public class HibernateUtil {
             System.out.println("Hibernate serviceRegistry created...");
 
             sessionFactory = configuration.buildSessionFactory(serviceRegistry);
-//            sessionFactory = configuration.buildSessionFactory();
+
+            /*
+
+            If you dont create serviceRegistry then use below line
+            sessionFactoryessionFactory = configuration.buildSessionFactory();
+
+             */
+
+            System.out.println("Hibernate SessionFactory created...");
 
         } catch (Throwable ex) {
             // Make sure you log the exception, as it might be swallowed

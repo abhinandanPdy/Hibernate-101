@@ -5,12 +5,12 @@ public class Employee {
     private int empId;
     private String empName;
     private String empDesignation;
-    private Double empSalary;
+    private int empSalary;
 
     // Constructors
     public Employee() {}
 
-    public Employee(String name, String empDesignation, Double empSalary) {
+    public Employee(String name, String empDesignation, int empSalary) {
         this.empName = name;
         this.empDesignation = empDesignation;
         this.empSalary = empSalary;
@@ -41,11 +41,11 @@ public class Employee {
         this.empDesignation = empDesignation;
     }
 
-    public Double getEmpSalary() {
+    public int getEmpSalary() {
         return empSalary;
     }
 
-    public void setEmpSalary(Double empSalary) {
+    public void setEmpSalary(int empSalary) {
         this.empSalary = empSalary;
     }
 }
